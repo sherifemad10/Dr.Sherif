@@ -1,0 +1,128 @@
+.Services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  margin: 5rem auto;
+
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #d36d23;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
+  .Services-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    // services-card
+    @for $i from 1 through 4 {
+      .services-card#{$i} {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 50rem;
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        transition: 0.5s;
+        padding: 2rem;
+        cursor: pointer;
+
+        // responsive
+        @media (max-width: 570px) {
+          width: 80%;
+          gap: 1rem;
+        }
+
+        @if $i == 1 {
+          background-color: #d36d23;
+
+          color: #fff;
+        } @else if $i == 2 {
+          background-color: #cbdfc3;
+        } @else if $i == 3 {
+          background-color: #fff;
+        } @else if $i == 4 {
+          background-color: #d5e0e4;
+        } @else {
+          background-color: #000;
+        }
+        h3 {
+          font-size: 3.5rem;
+          font-weight: 600;
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+
+          // responsive
+          @media (max-width: 475px) {
+            font-size: 2.5rem;
+          }
+
+          @media (max-width: 390px) {
+            font-size: 2rem;
+          }
+        }
+        &:hover {
+          transition: 0.5s linear;
+          scale: 1.1;
+        }
+      }
+    }
+  }
+}
+
+// responsive
+
+@media (max-width: 475px) {
+  img {
+    width: 150px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 390px) {
+  img {
+    width: 100px;
+    height: 150px;
+  }
+}
+
+// dark mode
+
+.Home.dark {
+  .Services {
+    h2 {
+      color: #f7f3e8;
+    }
+
+    @for $i from 1 through 4 {
+      .services-card#{$i} {
+        @if $i == 1 {
+          background-color: #d36d23;
+          color: #fff;
+        } @else if $i == 2 {
+          background-color: #cbdfc3;
+          color: #151931;
+        } @else if $i == 3 {
+          background-color: #fff;
+          color: #151931;
+        } @else if $i == 4 {
+          background-color: #d5e0e4;
+          color: #151931;
+        } @else {
+          background-color: #000;
+        }
+      }
+    }
+  }
+}

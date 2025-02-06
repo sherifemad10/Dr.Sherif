@@ -1,27 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
+  --maincolor: #5e4548;
+  --secondarycolor: #f7f3e8;
+  --accentcolor: #f2c464;
   overflow-x: hidden;
+  font-size: 10px;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f3e8;
 }
 
 * {
@@ -31,12 +20,36 @@ body {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  font-family: "Caveat", serif;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/*  to remove the arrows from the input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.line-break {
+  display: block;
+  width: 80%;
+  height: 0.2rem;
+  margin: 1rem auto;
+  background-color: var(--maincolor);
+}
+
+/* dark mode */
+.Home.dark {
+  background-color: #151931;
+  color: #fff;
+
+  .line-break {
+    background-color: #fff;
   }
 }

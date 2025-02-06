@@ -1,0 +1,204 @@
+.Bmi {
+  background-color: #e2e1e1;
+  padding: 3rem;
+  border-radius: 2rem;
+  width: 80%;
+  margin: auto;
+
+  @media (max-width: 770px) {
+    background: none;
+    width: 100%;
+  }
+
+  @media (max-width: 475px) {
+    padding: 1rem;
+  }
+
+  .bmiContainer {
+    position: relative;
+    background: url(/about.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    padding: 6rem;
+
+    @media (max-width: 770px) {
+      background: none;
+    }
+
+    @media (max-width: 450px) {
+      padding: 2em;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #e2e1e1;
+      opacity: 0.3;
+
+      @media (max-width: 770px) {
+        background: none;
+      }
+    }
+
+    // form BMI
+    .bmi-form {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      background-color: #fff;
+      border-radius: 2rem;
+      width: 50rem;
+      margin: auto;
+
+      @media (max-width: 580px) {
+        width: 100%;
+      }
+
+      h5 {
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        color: #5e4548;
+        font-weight: 600;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      p {
+        font-size: 1.3rem;
+        color: #000000b0;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        margin-bottom: 1rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        justify-content: center;
+        align-items: start;
+
+        label {
+          font-size: 1.5rem;
+          color: #5e4548;
+          font-weight: 600;
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+        }
+
+        input[type="number"] {
+          width: 100%;
+          padding: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 1rem;
+          background-color: #f8f9fa;
+          font-size: 1.5rem;
+          color: #000000b0;
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          outline: none;
+        }
+
+        .submit {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          padding: 1rem;
+          border: none;
+          border-radius: 1rem;
+          background-color: #5e4548;
+          font-size: 1.5rem;
+          color: #fff;
+          font-weight: 600;
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+          cursor: pointer;
+          transition: all 0.5s ease-in-out;
+          &:hover {
+            background-color: #ee964b;
+          }
+        }
+
+        // result
+        #result {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 1rem;
+          width: 100%;
+
+          p {
+            font-size: 2rem;
+            color: #000000b0;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+              "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          }
+        }
+
+        // result-img
+        #result-img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20rem;
+          margin-inline: auto;
+          margin-top: 2rem;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        // status
+        #status {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 1rem;
+          width: 100%;
+
+          p {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000000b0;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+              "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          }
+        }
+
+        // advice
+        #advice {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 1rem;
+          width: 100%;
+
+          p {
+            font-size: 1.5rem;
+            color: #000000b0;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+              "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          }
+        }
+      }
+    }
+  }
+}

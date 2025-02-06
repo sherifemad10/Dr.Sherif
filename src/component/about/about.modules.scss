@@ -1,0 +1,153 @@
+.About {
+  width: 80%;
+  margin: auto;
+
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #d36d23;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
+  .about-wrapper {
+    background-color: #e2e1e1;
+    padding: 3rem;
+    border-radius: 2rem;
+
+    .about-container {
+      position: relative;
+
+      background: url(/about.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 70vh;
+      border-radius: 2rem;
+
+      @media (max-width: 770px) {
+        height: 100vh;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #e2e1e1;
+        opacity: 0.3;
+      }
+    }
+
+    // about-text
+
+    .about-text {
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      // responsive
+      @media (max-width: 420px) {
+        top: 30%;
+      }
+
+      h4 {
+        font-size: 2rem;
+        background-color: #000;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        border-radius: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+        line-height: 1.8;
+        font-weight: 600;
+        background-color: #fff;
+        border-radius: 1rem;
+        padding: 1rem;
+        text-align: start;
+
+        // responsive
+        @media (max-width: 420px) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    .experience-people {
+      width: 100%;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+
+      @media (max-width: 420px) {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .experience,
+      .people {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        @media (max-width: 770px) {
+          width: 20rem;
+        }
+
+        h4 {
+          font-size: 3rem;
+          font-weight: 600;
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+          font-weight: 400;
+          font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+          color: #00000091;
+        }
+      }
+    }
+  }
+}
+
+// dark mode
+
+.Home.dark {
+  .About {
+    p {
+      color: #000;
+    }
+
+    .experience,
+    .people {
+      h4 {
+        color: #000;
+      }
+    }
+  }
+}

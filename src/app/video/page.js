@@ -16,12 +16,12 @@ const Video = () => {
   <Link href='/'>
      <IoClose onClick={videoHandler} className='close-icon'/>
      </Link>
-        {
-        <video autoPlay loop={true}>
-          <source src='/Nutrition-Clinic.mp4' type='video/mp4' />
-        </video>
+        
+<video autoPlay loop={true}>
+        <source src='/Nutrition-Clinic.mp4' type='video/mp4' />
+      </video>
       
-      }
+      
       </div>
 
     </div>

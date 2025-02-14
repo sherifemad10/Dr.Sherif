@@ -3,109 +3,75 @@ import "./bmr.modules.scss";
 
 const Bmr = () => {
   const [gender, setGender] = useState("");
-  const [weight, setWeight] = useState();
-  const [height, setHeight] = useState();
-  const [age, setAge] = useState();
+  const [weight, setWeight] = useState("");
+  const [height, setHeight] = useState("");
+  const [age, setAge] = useState("");
   const [activity, setActivity] = useState("");
   const [result, setResult] = useState(null);
 
-  // BMR calculation logic
   const calculateBmr = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    // Early validation
     if (!gender || !weight || !height || !age || !activity) {
       setResult("Please fill all the required fields");
       return;
     }
 
-    let bmr;
+    const weightNum = parseFloat(weight);
+    const heightNum = parseFloat(height);
+    const ageNum = parseInt(age, 10);
 
-    // Calculate BMR based on gender
+    if (isNaN(weightNum) || isNaN(heightNum) || isNaN(ageNum)) {
+      setResult("Please enter valid numerical values");
+      return;
+    }
+
+    let bmr;
     if (gender === "male") {
-      bmr = 66.5 + 13.75 * weight + 5 * height - 6.78 * age;
+      bmr = 66.5 + 13.75 * weightNum + 5 * heightNum - 6.78 * ageNum;
     } else if (gender === "female") {
-      bmr = 655 + 9.56 * weight + 1.85 * height - 4.68 * age;
+      bmr = 655 + 9.56 * weightNum + 1.85 * heightNum - 4.68 * ageNum;
     } else {
       setResult("Invalid gender selection");
       return;
     }
 
-    // Apply activity level multiplier
-    let multiplier = 1;
-    if (activity === "Low") multiplier = 1.2;
-    if (activity === "Medium") multiplier = 1.3;
-    if (activity === "High") multiplier = 1.4;
+    const activityMultipliers = {
+      Low: 1.2,
+      Medium: 1.3,
+      High: 1.4,
+    };
 
-    setResult((bmr * multiplier).toFixed(2)); // Set the result
+    const multiplier = activityMultipliers[activity] || 1;
+    setResult(`Your BMR is: ${(bmr * multiplier).toFixed(2)} calories`);
   };
 
   return (
     <section className="Bmr">
       <div className="bmr-container">
         <form onSubmit={calculateBmr}>
-          <h4>
-            Calculate Your Basal Metabolic Rate (BMR)
-          </h4>
+          <h4>Calculate Your Basal Metabolic Rate (BMR)</h4>
 
           <div className="form-group">
             <label htmlFor="gender">Gender:</label>
-            <select
-              id="gender"
-              name="gender"
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
-            >
-              <option value="" hidden>
-                Gender
-              </option>
+            <select id="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+              <option value="" hidden>Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
 
             <label htmlFor="weight">Weight (kg):</label>
-            <input
-              type="number"
-              id="weight"
-              name="weight"
-              placeholder="kg"
-              required
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-            />
+            <input type="number" id="weight" placeholder="kg" value={weight} onChange={(e) => setWeight(e.target.value)} />
 
             <label htmlFor="height">Height (cm):</label>
-            <input
-              type="number"
-              id="height"
-              name="height"
-              placeholder="cm"
-              required
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-            />
+            <input type="number" id="height" placeholder="cm" value={height} onChange={(e) => setHeight(e.target.value)} />
 
             <label htmlFor="age">Age (years):</label>
-            <input
-              type="number"
-              id="age"
-              name="age"
-              placeholder="years"
-              required
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-            />
+            <input type="number" id="age" placeholder="years" value={age} onChange={(e) => setAge(e.target.value)} />
 
             <label htmlFor="activity">Activity Level:</label>
-            <select
-              id="activity"
-              name="activity"
-              value={activity}
-              onChange={(e) => setActivity(e.target.value)}
-            >
-              <option value="" hidden>
-                Choose your activity level
-              </option>
+            <select id="activity" value={activity} onChange={(e) => setActivity(e.target.value)}>
+              <option value="" hidden>Choose your activity level</option>
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
               <option value="High">High</option>
@@ -114,11 +80,7 @@ const Bmr = () => {
             <button type="submit">Calculate BMR</button>
           </div>
 
-          {result && (
-            <div id="bmr-result">
-              <p>Your BMR is: {result} calories</p>
-            </div>
-          )}
+          {result && <div id="bmr-result"><p>{result}</p></div>}
         </form>
       </div>
     </section>

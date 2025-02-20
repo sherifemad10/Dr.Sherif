@@ -7,6 +7,8 @@ import Main from "@/component/main/Main";
 import Quote from "@/component/quote/Quote";
 import Services from "@/component/services/Services";
 import About from "@/component/about/About";
+import Ads from "@/component/Ads/Ads";
+
 
 const Bmi = dynamic(() => import("@/component/Bmi/Bmi"), { ssr: false });
 const Bmr = dynamic(() => import("@/component/Bmr/Bmr"), { ssr: false });
@@ -31,6 +33,7 @@ export default function Home() {
       <Main />
       <div className="line-break"></div>
       <Services />
+       <Ads/>
       <div className="line-break"></div>
       <About />
       <Quote Quote={quotes[0]} />

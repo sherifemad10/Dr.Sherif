@@ -11,6 +11,11 @@
 
 body {
   background-color: #f7f3e8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 * {
@@ -44,12 +49,7 @@ input[type="number"] {
   background-color: var(--maincolor);
 }
 
-iframe body{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /* dark mode */
 .Home.dark {

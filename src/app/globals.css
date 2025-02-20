@@ -44,7 +44,8 @@ input[type="number"] {
   background-color: var(--maincolor);
 }
 
-ifram body{
+iframe body{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

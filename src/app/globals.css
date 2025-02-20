@@ -44,6 +44,14 @@ input[type="number"] {
   background-color: var(--maincolor);
 }
 
+.ads{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+   width: 100%;
+}
+
 /* dark mode */
 .Home.dark {
   background-color: #151931;

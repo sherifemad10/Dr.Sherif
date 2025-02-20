@@ -44,6 +44,13 @@ input[type="number"] {
   background-color: var(--maincolor);
 }
 
+.ads-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
 
 
 /* dark mode */

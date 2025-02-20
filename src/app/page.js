@@ -33,9 +33,10 @@ export default function Home() {
       <Main />
       <div className="line-break"></div>
       <Services />
-    <div className="ads">
-     <Ads/>
-    </div>
+   <div className="ads-wrapper">
+  <Ads />
+</div>
+
       
       <div className="line-break"></div>
       <About />

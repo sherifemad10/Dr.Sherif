@@ -33,7 +33,10 @@ export default function Home() {
       <Main />
       <div className="line-break"></div>
       <Services />
-       <Ads/>
+    <div className="ads">
+     <Ads/>
+    </div>
+      
       <div className="line-break"></div>
       <About />
       <Quote Quote={quotes[0]} />

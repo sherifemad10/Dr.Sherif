@@ -2,7 +2,7 @@
 
 const Ads = () => {
   return (
-    <section className='ads'>
+    <div className='ads'>
 
       <script type="text/javascript">
 	atOptions = {
@@ -15,7 +15,7 @@ const Ads = () => {
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/951409e9961f7720e3e80e9c9db291e6/invoke.js"></script>
 
-    </>
+    <div/>
   )
 }
 

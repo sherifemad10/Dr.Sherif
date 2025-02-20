@@ -44,12 +44,10 @@ input[type="number"] {
   background-color: var(--maincolor);
 }
 
-.ads{
+ifram body{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5rem auto;
-   width: 100%;
 }
 
 /* dark mode */

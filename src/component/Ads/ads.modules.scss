@@ -1,7 +1,36 @@
-.ads-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px; // Adjust as needed
+// ads.module.scss
+.adsContainer {
   width: 100%;
+  max-width: 728px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  
+  // Ensure iframe is responsive
+  iframe {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 728px;
+    max-height: 90px;
+  }
+
+  // Media queries for different screen sizes
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 5px;
+    
+    iframe {
+      max-width: 100%;
+      height: auto !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2px;
+    
+    iframe {
+      max-width: 100%;
+      height: auto !important;
+    }
+  }
 }

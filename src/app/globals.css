@@ -50,6 +50,13 @@ input[type="number"] {
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .ads-wrapper {
+    display: none;
+  }
+  
+}
+
 
 
 

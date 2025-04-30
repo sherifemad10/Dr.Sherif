@@ -32,6 +32,8 @@ export default function Home() {
     <div className={homeClassName}>
       <Main />
       <div className="line-break"></div>
+            <Ads />
+
       <Services />
      <div className="ads-wrapper">
         <Ads />
@@ -49,6 +51,8 @@ export default function Home() {
       </div>
       <div className="line-break"></div>
       <Contact />
+          <Ads />
+
     </div>
   );
 }

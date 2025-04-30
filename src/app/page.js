@@ -35,9 +35,9 @@ export default function Home() {
             <Ads />
 
       <Services />
-     <div className="ads-wrapper">
+     // <div className="ads-wrapper">
         <Ads />
-      </div>
+      // </div>
 
       
       <div className="line-break"></div>
@@ -46,9 +46,9 @@ export default function Home() {
       <Bmi />
       <Quote Quote={quotes[1]} />
       <Bmr />
-     <div className="ads-wrapper">
+     // <div className="ads-wrapper">
         <Ads />
-      </div>
+      // </div>
       <div className="line-break"></div>
       <Contact />
           <Ads />

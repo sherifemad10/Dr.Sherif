@@ -1,11 +1,11 @@
-'use client'; // Add this if using the app directory
+'use client';
 
 import { useEffect } from 'react';
 import './ads.modules.scss';
 
 const Ads = () => {
   useEffect(() => {
-    // Define global atOptions before script is loaded
+    // ✅ Load desktop ad
     window.atOptions = {
       key: '951409e9961f7720e3e80e9c9db291e6',
       format: 'iframe',
@@ -14,21 +14,43 @@ const Ads = () => {
       params: {},
     };
 
-    // Create and append the ad script
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = '//www.highperformanceformat.com/951409e9961f7720e3e80e9c9db291e6/invoke.js';
-    script.async = true;
+    const desktopScript = document.createElement('script');
+    desktopScript.type = 'text/javascript';
+    desktopScript.src = '//www.highperformanceformat.com/951409e9961f7720e3e80e9c9db291e6/invoke.js';
+    desktopScript.async = true;
 
-    const container = document.getElementById('desktop-ad-slot');
-    if (container) {
-      container.appendChild(script);
+    const desktopContainer = document.getElementById('desktop-ad-slot');
+    if (desktopContainer) {
+      desktopContainer.appendChild(desktopScript);
     }
 
-    // Optional cleanup
+    // ✅ Load mobile ad
+    const aclibScript = document.createElement('script');
+    aclibScript.type = 'text/javascript';
+    aclibScript.src = '//acscdn.com/script/aclib.js';
+    aclibScript.id = 'aclib';
+    aclibScript.async = true;
+
+    aclibScript.onload = () => {
+      if (window.aclib) {
+        window.aclib.runBanner({
+          zoneId: '9888754',
+        });
+      }
+    };
+
+    const mobileContainer = document.getElementById('mobile-ad-slot');
+    if (mobileContainer) {
+      document.body.appendChild(aclibScript); // must be on body for many ad providers
+    }
+
+    // ✅ Cleanup
     return () => {
-      if (container && script.parentNode === container) {
-        container.removeChild(script);
+      if (desktopContainer && desktopScript.parentNode === desktopContainer) {
+        desktopContainer.removeChild(desktopScript);
+      }
+      if (document.getElementById('aclib')) {
+        document.body.removeChild(aclibScript);
       }
     };
   }, []);
@@ -45,7 +67,7 @@ const Ads = () => {
       {/* Mobile ads */}
       <div className="Ads-mobile">
         <div className="Ads-content">
-          <h3>Ads</h3>
+          <div id="mobile-ad-slot" />
         </div>
       </div>
     </div>

@@ -25,6 +25,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5224293873880731"
+     crossorigin="anonymous"></script>
+    </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ContextProvider>
           <Navbar />
@@ -32,8 +36,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </ContextProvider>
       </body>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5224293873880731"
-     crossorigin="anonymous"></script>
     </html>
   );
 }

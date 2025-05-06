@@ -32,6 +32,8 @@ export default function RootLayout({ children }) {
           <Footer />
         </ContextProvider>
       </body>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5224293873880731"
+     crossorigin="anonymous"></script>
     </html>
   );
 }
